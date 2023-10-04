@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  db:
+    build:
+      context: database
+    container_name: db
+    image: chat-db
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+    environment:
+      - "MYSQL_ROOT_PASSWORD=rootroot"
+    ports:
+      - "3306:3306"
+    volumes:
+      - chat_data:/var/lib/mysql
+
+  back:
+    build:
+      context: backend/your-car-your-way
+    container_name: backend
+    image: chat-backend
+    environment:
+      - "MYSQL_USERNAME=root"
+      - "MYSQL_PASSWORD=rootroot"
+      - "SPRING_PROFILES_ACTIVE=docker"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  chat_data:

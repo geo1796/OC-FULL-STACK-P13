@@ -14,7 +14,7 @@
 	<name>your-car-your-way</name>
 	<description>Openclassoorms parcours full stack projet 13</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
