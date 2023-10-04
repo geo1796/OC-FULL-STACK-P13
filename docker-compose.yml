@@ -27,6 +27,8 @@ services:
       - "MYSQL_USERNAME=root"
       - "MYSQL_PASSWORD=rootroot"
       - "SPRING_PROFILES_ACTIVE=docker"
+      - "JWT_SECRET=mySecret"
+      - "JWT_EXPIRY=86400000"
     ports:
       - "8080:8080"
     depends_on:
