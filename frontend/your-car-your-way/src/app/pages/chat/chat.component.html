@@ -1,1 +1,18 @@
-<p>chat works!</p>
+<div *ngIf="!loading && !onError">
+    <button mat-icon-button (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1 class="subject">{{chat.subject}}</h1>
+    <div #messagesContainer class="messages">
+        <app-message *ngFor="let message of chat.messages" [message]="message"></app-message>
+    </div>
+    <form [formGroup]="msgForm" (ngSubmit)="sendMessage()">
+        <mat-form-field class="new-message">
+            <mat-label>Votre message</mat-label>
+            <input matInput type="text" formControlName="content">
+        </mat-form-field>
+        <button mat-icon-button type="submit">
+            <mat-icon>send</mat-icon>
+        </button>
+    </form>
+</div>

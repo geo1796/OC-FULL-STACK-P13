@@ -1,6 +1,7 @@
 package com.openclassrooms.yourcaryourway.controller;
 
 import com.openclassrooms.yourcaryourway.dto.request.NewChat;
+import com.openclassrooms.yourcaryourway.dto.response.ChatResponse;
 import com.openclassrooms.yourcaryourway.model.Chat;
 import com.openclassrooms.yourcaryourway.service.ChatService;
 import jakarta.validation.Valid;
@@ -20,5 +21,10 @@ public class ChatController {
     @PostMapping()
     ResponseEntity<Chat> startChat(@RequestBody @Valid NewChat newChat) {
         return new ResponseEntity<>(chatService.createChat(newChat), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    ResponseEntity<ChatResponse> getById(@PathVariable Integer id) {
+        return ResponseEntity.ok(chatService.getById(id));
     }
 }

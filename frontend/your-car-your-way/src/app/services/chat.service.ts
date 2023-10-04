@@ -16,4 +16,8 @@ export class ChatService {
   startChat(c: NewChat): Observable<Chat> {
     return this.http.post<Chat>(this.url, c);
   }
+
+  getChat(id: number): Observable<Chat> {
+    return this.http.get<Chat>(this.url + '/' + id);
+  }
 }

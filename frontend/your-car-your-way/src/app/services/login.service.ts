@@ -23,6 +23,10 @@ export class LoginService {
  
   constructor(private http: HttpClient) { }
 
+  get userId(): number {
+    return +localStorage.getItem("userId")!;
+  }
+
   public tryAutoLogin(): void {
     const token = localStorage.getItem("access_token");
     if (token === null) return;

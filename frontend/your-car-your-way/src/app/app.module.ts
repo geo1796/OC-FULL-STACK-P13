@@ -25,6 +25,7 @@ import { ChatFormComponent } from './pages/chat-form/chat-form.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { MessageComponent } from './pages/chat/message/message.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     LoginComponent,
     ChatFormComponent,
     ChatComponent,
-    ChatListComponent
+    ChatListComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

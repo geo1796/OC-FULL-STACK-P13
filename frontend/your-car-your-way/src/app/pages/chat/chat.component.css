@@ -1,0 +1,14 @@
+h1.subject {
+    margin: 10px;
+}
+
+.messages {
+    max-height: 80vh;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+}
+
+.new-message {
+    margin: 10px;
+    width: 80vw;
+}
