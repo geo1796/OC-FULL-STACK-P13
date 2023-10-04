@@ -1,0 +1,19 @@
+.message {
+    margin: 10px;
+    background-color: lightgray;
+    margin-left: 100px;
+}
+
+.self-message {
+    background-color: lightblue;
+    margin: 10px;
+    margin-right: 100px;
+}
+
+.content {
+    margin: 10px;
+}
+
+.footer {
+    margin-left: 10px;
+}

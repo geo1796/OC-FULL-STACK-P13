@@ -1,1 +1,10 @@
-<p>message works!</p>
+<mat-card [class]="isSelfMessage() ? 'self-message' : 'message'">
+    <mat-card-content class="content">
+        <p>{{message.content}}</p>
+    </mat-card-content>
+    <mat-card-footer class="footer">
+        <div class="row">
+            <p>{{message.sender}} - {{getMessageDate()}}</p>
+        </div>
+    </mat-card-footer>
+</mat-card>
