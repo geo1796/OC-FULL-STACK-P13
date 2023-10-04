@@ -1,1 +1,27 @@
-<p>chat-form works!</p>
+<div class="header">
+    <button mat-icon-button (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+</div>
+<div class="container-90">
+    <div class="center">
+        <mat-card>
+            <mat-card-header>
+                <h1>Nouveau chat</h1>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="chatForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field>
+                        <mat-label>Sujet du chat</mat-label>
+                        <input matInput type="text" formControlName="subject">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button type="submit" class="submit" color="primary"
+                        [disabled]="chatForm.invalid">
+                        Continuer
+                    </button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
