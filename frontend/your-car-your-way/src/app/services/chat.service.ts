@@ -20,4 +20,8 @@ export class ChatService {
   getChat(id: number): Observable<Chat> {
     return this.http.get<Chat>(this.url + '/' + id);
   }
+
+  findAll(): Observable<Chat[]> {
+    return this.http.get<Chat[]>(this.url);
+  }
 }

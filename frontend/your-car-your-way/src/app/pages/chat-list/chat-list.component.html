@@ -1,1 +1,30 @@
-<p>chat-list works!</p>
+<button mat-icon-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+<div *ngIf="!loading" class="chat-table">
+    <table mat-table class="mat-elevation-z8" [dataSource]="chats">
+        <ng-container matColumnDef="author">
+            <th mat-header-cell *matHeaderCellDef>Auteur</th>
+            <td mat-cell *matCellDef="let chat">{{chat.author}}</td>
+        </ng-container>
+        <ng-container matColumnDef="subject">
+            <th mat-header-cell *matHeaderCellDef>Sujet</th>
+            <td mat-cell *matCellDef="let chat">{{chat.subject}}</td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date de création</th>
+            <td mat-cell *matCellDef="let chat">{{getChatDate(chat)}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nav">
+            <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+            <td mat-cell *matCellDef="let program">
+                <button mat-icon-button color="primary" (click)="navToChat(program)">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+</div>

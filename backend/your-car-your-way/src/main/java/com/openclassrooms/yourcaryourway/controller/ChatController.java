@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/chats")
 @AllArgsConstructor
@@ -26,5 +28,10 @@ public class ChatController {
     @GetMapping("/{id}")
     ResponseEntity<ChatResponse> getById(@PathVariable Integer id) {
         return ResponseEntity.ok(chatService.getById(id));
+    }
+
+    @GetMapping()
+    ResponseEntity<List<ChatResponse>> findAll() {
+        return ResponseEntity.ok(chatService.findAll());
     }
 }
