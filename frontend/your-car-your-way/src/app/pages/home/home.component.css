@@ -1,3 +1,7 @@
 button.logout {
     margin: 5px;
 }
+
+button.chat {
+    margin: 10px;
+}

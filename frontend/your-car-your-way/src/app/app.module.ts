@@ -21,12 +21,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ChatFormComponent } from './pages/chat-form/chat-form.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { ChatListComponent } from './pages/chat-list/chat-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ChatFormComponent,
+    ChatComponent,
+    ChatListComponent
   ],
   imports: [
     BrowserModule,
